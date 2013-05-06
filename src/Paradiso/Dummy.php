@@ -27,23 +27,23 @@ class Dummy extends Resource
      * response body, or a full Tonic\Response object.
      *
      * @method GET
-     * @param  str $name
+     * @param  str $msg
      * @return str
      */
-    public function sayHello($name = 'Response')
+    public function sayHello($msg = 'Empty')
     {
-        return 'Dummy '.htmlspecialchars(ucwords($name));
+        return 'Your message was '.htmlspecialchars(ucwords($msg));
     }
 
     /**
      * @method GET
      * @lang fr
-     * @param  str $name
+     * @param  str $msg
      * @return str
      */
-    public function sayHelloInFrench($name = 'Response')
+    public function sayHelloInFrench($msg = 'Empty')
     {
-        return 'Bonjour '.htmlspecialchars(ucwords($name));
+        return 'Bonjour '.htmlspecialchars(ucwords($msg));
     }
 
     /**
@@ -96,7 +96,7 @@ class Dummy extends Resource
     public function sayHelloComputer()
     {
         return new Response(200, array(
-            'hello' => $this->name,
+            'msg' => $this->name,
             'url' => $this->app->uri($this, $this->name)
         ));
     }
