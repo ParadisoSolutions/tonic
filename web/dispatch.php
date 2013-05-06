@@ -2,7 +2,7 @@
 
 // load autoloader (delete as appropriate)
 if (@include('../src/Tonic/Autoloader.php')) { // use Tonic autoloader
-    #new Tonic\Autoloader('myNamespace'); // add another namespace
+    new Tonic\Autoloader('Paradiso'); // add another namespace
 } elseif (!@include('../vendor/autoload.php')) { // use Composer autoloader
     die('Could not find autoloader');
 }
@@ -10,6 +10,7 @@ if (@include('../src/Tonic/Autoloader.php')) { // use Tonic autoloader
 $config = array(
     'load' => array(
         '../src/Tyrell/*.php', // load example resources
+        '../src/Paradiso/*.php',
         '../vendor/peej/tonic/src/Tyrell/*.php' // load examples from composer's vendor directory
     ),
     #'mount' => array('Tyrell' => '/nexus'), // mount in example resources at URL /nexus
